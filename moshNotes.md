@@ -3,8 +3,8 @@
 
 https://youtu.be/SqcY0GlETPk
 
-Time 34:10
-https://youtu.be/SqcY0GlETPk?t=2050
+Time 38:39
+https://youtu.be/SqcY0GlETPk?t=2319
 
 ## Terminal Commands
 To instal React using Vite
