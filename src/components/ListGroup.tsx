@@ -1,9 +1,10 @@
 import { Fragment } from "react";
+import { MouseEvent } from "react"; // This is a paramenter event that will throw a TypeScript Error if it is missing
 
 function ListGroup() {
   let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
 
-  items = [];
+  /*   items = []; */ // We can overwrite the array
 
   /* 
 ! CONDITIONAL RENDERING
@@ -31,6 +32,10 @@ function ListGroup() {
 
  */
 
+  // Event Handler
+  const handleClick = (event: MouseEvent) => console.log("Clicked", event);
+  /* we are showing off how the paramenter 'item', index and event act when logged */
+
   return (
     <Fragment>
       {/* Remember you need to wrap eveything in a div / Fragment / <> for each component. */}
@@ -42,7 +47,17 @@ function ListGroup() {
       <ul className="list-group">
         {/* Originally pulled the Code form getBootstrap.com => Components => List group */}
         {items.map((item) => (
-          <li key={item} className="list-group-item">
+          <li key={item} onClick={handleClick} className="list-group-item">
+            {/*
+            HERE IS AN ALTERNATIVE where we show off how the paramenter 'item', index and event act when logged
+      {items.map((item, index) => (
+          <li
+            key={item}
+           onClick={(event) => console.log("Clicked", item, index, event)}
+            className="list-group-item"
+          > 
+           */}
+
             {item}
           </li>
         ))}
