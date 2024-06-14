@@ -5,7 +5,7 @@ function ListGroup() {
 
   items = [];
 
-/* 
+  /* 
 ! CONDITIONAL RENDERING
   Here are different methods to make the list more dynamic...
   #1 Using an if statement that will change the return
@@ -24,9 +24,9 @@ function ListGroup() {
   #3 Creating a function: this is the best if you need to have parameters passed into the function otherwise use method #2:
 
   const getMessage = () => {
-    items.length === 0 ? <p>No item found</p> : null;
-    //here is a cleaner version of the code
-    items.length === 0 && <p>No item found</p>;
+    items.length === 0 ? <p>No item found</p> : null; // having a null is not clean and may lead to problems...
+      
+    items.length === 0 && <p>No item found</p>; // here is a cleaner version of the code, null is messs so since we have a true and a value it will display the value so long as the first part is true.
   };
 
  */
