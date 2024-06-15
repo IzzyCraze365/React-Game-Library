@@ -101,11 +101,13 @@ You can represent `{Fragment}` in 2 ways:
 
 ## Files Created
 
-- ListGroup.tsx
-- Alert.tsx
-- ButtonAlert.tsx
+- `ListGroup.tsx`
+- `Alert.tsx`
+- `ButtonAlert.tsx`
+- `OGListGroup.tsx`
+  - This file has all the alternatives to the code and a ton of comments, I copied it and made a clean code version of ListGroup.
 
 ## Files Modified
 
-- main.tsx
-- App.tsx
+- `main.tsx`
+- `App.tsx`
