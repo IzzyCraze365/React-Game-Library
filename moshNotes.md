@@ -4,9 +4,6 @@
 
 https://youtu.be/SqcY0GlETPk
 
-Time 38:39
-https://youtu.be/SqcY0GlETPk?t=2319
-
 getBootstrap.com
 use this for styling
 
