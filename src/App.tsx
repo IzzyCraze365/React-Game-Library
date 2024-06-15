@@ -1,4 +1,5 @@
 /* import Message from "./Message"; // We don't need this line, we are not using it */
+import { useState } from "react";
 import Alert from "./components/Alert";
 import ButtonAlert from "./components/ButtonAlert";
 import Buttons from "./components/Buttons";
@@ -7,6 +8,7 @@ import ListGroup from "./components/ListGroup";
 function App() {
   //Following will be props passed
   let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
+  const [buttonAlertVisible, setbuttonAlertVisible] = useState(false);
 
   const handleSelectItem = (item: string) => {
     console.log("handleSelectItem", item);
@@ -23,7 +25,11 @@ function App() {
         {" "}
         Hello <span>World</span>
       </Alert>
-      <ButtonAlert>My Alert</ButtonAlert>
+      {buttonAlertVisible && (
+        <ButtonAlert onClose={() => setbuttonAlertVisible(false)}>
+          Alert Button Pushed
+        </ButtonAlert>
+      )}
       <Buttons
         color="primary"
         onClick={() => {
@@ -43,7 +49,7 @@ function App() {
       <Buttons
         color="danger"
         onClick={() => {
-          console.log("Clicked");
+          setbuttonAlertVisible(true);
         }}
       >
         Danger!!!
