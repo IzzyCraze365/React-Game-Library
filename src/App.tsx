@@ -1,5 +1,6 @@
 /* import Message from "./Message"; // We don't need this line, we are not using it */
 import Alert from "./components/Alert";
+import ButtonAlert from "./components/ButtonAlert";
 import Buttons from "./components/Buttons";
 import ListGroup from "./components/ListGroup";
 
@@ -13,9 +14,48 @@ function App() {
   /* return <div><Message></Message></div> */ //Removed so we can use ListGroup
   return (
     <div>
-      <ListGroup items={items} heading="Cities" onSelectItem={handleSelectItem}/>
-      <Alert> Hello <span>World</span></Alert>
-      <Buttons></Buttons>
+      <ListGroup
+        items={items}
+        heading="Cities"
+        onSelectItem={handleSelectItem}
+      />
+      <Alert>
+        {" "}
+        Hello <span>World</span>
+      </Alert>
+      <ButtonAlert>My Alert</ButtonAlert>
+      <Buttons
+        color="primary"
+        onClick={() => {
+          console.log("Clicked");
+        }}
+      >
+        My Button
+      </Buttons>
+      <Buttons
+        color="secondary"
+        onClick={() => {
+          console.log("Clicked");
+        }}
+      >
+        Second Button
+      </Buttons>
+      <Buttons
+        color="danger"
+        onClick={() => {
+          console.log("Clicked");
+        }}
+      >
+        Danger!!!
+      </Buttons>
+      <Buttons
+        color="pants"
+        onClick={() => {
+          console.log("Clicked");
+        }}
+      >
+        Danger!!!
+      </Buttons>
     </div>
   );
 }
