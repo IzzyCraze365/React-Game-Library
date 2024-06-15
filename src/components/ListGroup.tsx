@@ -1,8 +1,28 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import { MouseEvent } from "react"; // This is a paramenter event that will throw a TypeScript Error if it is missing
 
+// {items: [], heading : string }
+interface ListGroupProps {
+  items: string[];
+  heading: string;
+  // (item: string) => void
+  onSelectItem: (item: string) => void; // similar to onClick
+}
+
+/* 
+//Original Function
 function ListGroup() {
   let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
+ */
+
+function ListGroup({ items, heading, onSelectItem }: ListGroupProps) {
+  //Hook Example
+  const arr = useState(-1);
+  arr[0]; // variable (selectedIndex)
+  arr[1]; // updater function
+
+  /* let selectedIndex = -1; // Initially no item is selected. We do not end up using this*/
+  const [selectedIndex, setSelectedIndex] = useState(-1);
 
   /*   items = []; */ // We can overwrite the array
 
@@ -46,8 +66,19 @@ function ListGroup() {
       {items.length === 0 && <p>No item found</p>}
       <ul className="list-group">
         {/* Originally pulled the Code form getBootstrap.com => Components => List group */}
-        {items.map((item) => (
-          <li key={item} onClick={handleClick} className="list-group-item">
+        {items.map((item, index) => (
+          <li
+            key={item}
+            onClick={() => {
+              setSelectedIndex(index);
+              onSelectItem(item);
+            }}
+            className={
+              selectedIndex === index
+                ? "list-group-item active"
+                : "list-group-item"
+            }
+          >
             {/*
             HERE IS AN ALTERNATIVE where we show off how the paramenter 'item', index and event act when logged
       {items.map((item, index) => (
@@ -57,6 +88,12 @@ function ListGroup() {
             className="list-group-item"
           > 
            */}
+
+            {/* 
+      HERE IS AN ALTERNATIVE Secondary way to do this that calls the above created function.
+          {items.map((item, index) => (
+          <li key={item} onClick={handleClick} className= {selectedIndex === index ? 'list-group-item active':'list-group-item' }>
+ */}
 
             {item}
           </li>

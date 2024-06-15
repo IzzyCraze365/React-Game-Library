@@ -6,6 +6,9 @@ https://youtu.be/SqcY0GlETPk
 Time 38:39
 https://youtu.be/SqcY0GlETPk?t=2319
 
+getBootstrap.com
+use this for styling
+
 ## Terminal Commands
 To instal React using Vite
 `npm create vite@latest`
@@ -61,13 +64,35 @@ You can represent `{Fragment}` in 2 ways:
 - `<Fragment></Fragment>`
 - `<></>`
 
+## Props vs. State
+### Props
+- Input passed to a component
+- Similar to function args
+- Immutable (unchangable - ReadOnly)
+- Cause a re-render upon change
+
+### State
+- Data managed by a component
+- Similar to local variables
+- Mutable
+- Cause a re-render upon change
+
+
+## React Developer Tools
+- Extension is very helpful
+- Shows Components and Profiler
+- Components shows Props and what file renders it
+    - If you click they eye you can view the components matching DOM element.
 
 ## Shortcuts
 - `ctrl + D` = highlights all words for a quick replace.
 - You may need to use the arrow keys to capture all of the words.
+- `rafce` Works only if you have ES7+ React Extension you can type
+    - stands `React Arrow Function Component Export`
 
 ## Files Created
 - ListGroup.tsx
+- Alert.tsx
 ## Files Modified
 - main.tsx
 - App.tsx
